@@ -184,6 +184,108 @@
     </section>
     <!-- INFO END -->
 
+    <!-- STORY -->
+    <section id="story" class="story">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-10 text-center">
+            <span>Bagaimana cerita kami di mulai</span>
+            <h2>Cerita Kami</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos, quis.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <ul class="timeline">
+              <li>
+                <div class="timeline-image" style="background-image: url(img/man-pregnant-woman-hold-shoes-newborn-baby-their-arms-standing-green-field.jpg)"></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h3>Pertama Bertemu</h3>
+                    <span>17 Agustus 2022</span>
+                  </div>
+                  <div class="timeline-body">
+                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, magnam.</p>
+                  </div>
+                </div>
+              </li>
+              <li class="timeline-inverted">
+                <div class="timeline-image" style="background-image: url(https://picsum.photos/300/300)"></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h3>Propose</h3>
+                    <span>25 April 2024</span>
+                  </div>
+                  <div class="timeline-body">
+                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, magnam.</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="timeline-image" style="background-image: url(https://picsum.photos/200/300)"></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h3>Tunangan</h3>
+                    <span>30 April 2024</span>
+                  </div>
+                  <div class="timeline-body">
+                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, magnam.</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- STORY END -->
+
+    <!-- GALLERY -->
+    <section id="gallery" class="gallery">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-10 text-center">
+            <span>Memori Kisah Kami</span>
+            <h2>Photos</h2>
+            <p>Lorem ipfsum dolor, sit amet consectetur adipisicing elit. Eos, quis.</p>
+          </div>
+        </div>
+        <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 justify-content-center">
+          <div class="col mt-3">
+            <a href="https://picsum.photos/id/700/1200/675" data-toggle="lightbox" data-caption="Lorem 1" data-gallery="myGallery">
+              <img src="https://picsum.photos/id/700/300/400" alt="" class="img-fluid w-100 rounded" />
+            </a>
+          </div>
+          <div class="col mt-3">
+            <a href="https://picsum.photos/id/600/1200/675" data-toggle="lightbox" data-caption="Lorem 2" data-gallery="myGallery">
+              <img src="https://picsum.photos/id/600/300/400" alt="" class="img-fluid w-100 rounded" />
+            </a>
+          </div>
+          <div class="col mt-3">
+            <a href="https://picsum.photos/id/500/1200/675" data-toggle="lightbox" data-caption="Lorem 3" data-gallery="myGallery">
+              <img src="https://picsum.photos/id/500/300/400" alt="" class="img-fluid w-100 rounded" />
+            </a>
+          </div>
+          <div class="col mt-3">
+            <a href="https://picsum.photos/id/501/1200/675" data-toggle="lightbox" data-caption="Lorem 4" data-gallery="myGallery">
+              <img src="https://picsum.photos/id/501/300/400" alt="" class="img-fluid w-100 rounded" />
+            </a>
+          </div>
+          <div class="col mt-3">
+            <a href="https://picsum.photos/id/502/1200/675" data-toggle="lightbox" data-caption="Lorem 5" data-gallery="myGallery">
+              <img src="https://picsum.photos/id/502/300/400" alt="" class="img-fluid w-100 rounded" />
+            </a>
+          </div>
+          <div class="col mt-3">
+            <a href="https://picsum.photos/id/503/1200/675" data-toggle="lightbox" data-caption="Lorem 6" data-gallery="myGallery">
+              <img src="https://picsum.photos/id/503/300/400" alt="" class="img-fluid w-100 rounded" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- GALLERY END -->
+
     <!-- JS Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <!-- JS Bootstrap END -->
@@ -208,5 +310,25 @@
       });
     </script>
     <!-- COUNTDOWN END -->
+
+    <!-- OFFCANVAS NAVBAR -->
+    <script>
+      const stickyTop = document.querySelector(".sticky-top");
+      const offCanvas = document.querySelector(".offcanvas");
+
+      offCanvas.addEventListener("show.bs.offcanvas", function () {
+        stickyTop.style.overflow = "visible";
+      });
+
+      offCanvas.addEventListener("hidden.bs.offcanvas", function () {
+        stickyTop.style.overflow = "hidden";
+      });
+    </script>
+    <!-- OFFCANVAS NAVBAR END -->
+
+    <!-- LightBox -->
+    <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
+
+    <!-- LightBox -->
   </body>
 </html>
