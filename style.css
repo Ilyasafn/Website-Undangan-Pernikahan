@@ -7,7 +7,6 @@
 body {
   font-size: 1.2rem;
   font-family: "Poppins", sans-serif;
-  min-height: 2000px;
 }
 
 .hero::before {
@@ -89,7 +88,9 @@ body {
 .home h2,
 .info h2,
 .story h2,
-.gallery h2 {
+.gallery h2,
+.rsvp h2,
+.gifts h2 {
   color: var(--pink);
   font-family: "Pacifico", cursive;
   font-size: 5rem;
@@ -177,13 +178,16 @@ body {
 }
 
 .story,
-.gallery {
+.gallery,
+.rsvp,
+.gifts {
   padding-top: 10rem;
   padding-bottom: 8rem;
 }
 
 .story span,
-.gallery span {
+.gallery span,
+.gifts span {
   text-transform: uppercase;
   color: #666;
   font-size: 0.9rem;
@@ -193,7 +197,9 @@ body {
 }
 
 .story p,
-.gallery p {
+.gallery p,
+.rsvp p,
+.gifts span {
   font-size: 1rem;
   font-weight: 300;
 }
@@ -298,6 +304,56 @@ body {
   background-color: #fcecf8;
 }
 
+.rsvp {
+  background-color: var(--bg);
+}
+
+.rsvp h2 {
+  font-size: 4.5rem;
+}
+
+.rsvp p {
+  color: white;
+}
+
+.rsvp form label {
+  color: white;
+}
+
+.rsvp button {
+  background-color: var(--pink);
+  color: white;
+  border: 1px solid var(--pink);
+}
+
+.rsvp button:hover {
+  background-color: white;
+  color: var(--pink);
+  border: 1px solid white;
+}
+
+footer {
+  padding: 2rem;
+  background-color: var(--pink);
+  color: white;
+}
+
+footer a {
+  color: var(--bg);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: white;
+}
+
+footer li {
+  list-style: none;
+  display: inline;
+  margin: 0.5rem;
+}
+
 /* Media Query */
 
 /* Extra Large */
@@ -346,6 +402,10 @@ body {
     border-right-width: 14px;
     left: -13px;
     right: auto;
+  }
+
+  .rsvp button {
+    margin-top: -8px;
   }
 }
 
