@@ -30,7 +30,10 @@
     <!-- HERO -->
     <section id="hero" class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white">
       <main>
-        <h4>Kepada Bapak/Ibu/Saudara/i.</h4>
+        <h4>
+          Kepada
+          <span> Bapak/Ibu/Saudara/i, </span>
+        </h4>
         <h1>Ilyas & Al Furqon</h1>
         <p>Akan melangsungkan resepsi pernikahan dalam:</p>
         <div class="simply-countdown"></div>
@@ -135,8 +138,8 @@
           <div class="col-md-8 col-10 text-center">
             <h2>Informasi Acara</h2>
             <p class="alamat">
-              Alamat: Hotel Platinum, <br />
-              Jl. Soekarno Hatta No.28, Graha Indah, Kec. Balikpapan Utara, Kota Balikpapan, Kalimantan Timur 76126
+              Alamat: <br />
+              Hotel Platinum, Jl. Soekarno Hatta No.28, Graha Indah, Kec. Balikpapan Utara, Kota Balikpapan, Kalimantan Timur 76126
             </p>
             <a href="https://maps.app.goo.gl/KNTRNw8FGEiucCXm7" target="_blank" class="btn btn-light btn-sm my-4">Klik untuk membuka peta</a>
             <p class="description">Diharapkan untuk tidak salah alamat dan tanggal. Manakala tiba di tujuan namun tidak ada tanda-tanda dilangsungkan pernikahan boleh jadi Anda salah jadwal, atau salah tempat.</p>
@@ -323,6 +326,31 @@
             <button class="btn btn-primary">Kirim</button>
           </div>
         </form>
+        <div class="row justify-content-center mt-5">
+          <div class="col-md-6">
+            <div id="disqus_thread"></div>
+            <script>
+              /**
+               *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+               *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+              /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+              (function () {
+                // DON'T EDIT BELOW THIS LINE
+                var d = document,
+                  s = d.createElement("script");
+                s.src = "https://testwedding.disqus.com/embed.js";
+                s.setAttribute("data-timestamp", +new Date());
+                (d.head || d.body).appendChild(s);
+              })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          </div>
+        </div>
       </div>
     </section>
     <!-- RSVP END -->
@@ -398,6 +426,19 @@
       </div>
     </footer>
     <!-- FOOTER END -->
+
+    <!-- AUDIO CONTROLLER -->
+    <div class="audio-container">
+      <audio id="song" autoplay loop>
+        <source src="audio/Jazz piano “There will never be another you”.mp3" />
+      </audio>
+
+      <div class="audio-icon-wrapper" style="display: none">
+        <i class="bi bi-disc"></i>
+      </div>
+    </div>
+    <!-- AUDIO CONTROLLER END -->
+
     <!-- JS Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <!-- JS Bootstrap END -->
@@ -445,6 +486,10 @@
     <!-- Scroll -->
     <script>
       const rootElement = document.querySelector(":root");
+      const audioIconWrapper = document.querySelector(".audio-icon-wrapper");
+      const audioIcon = document.querySelector(".audio-icon-wrapper i");
+      const song = document.querySelector("#song");
+      let isPlaying = false;
 
       function disableScroll() {
         scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -459,12 +504,33 @@
       function enableScroll() {
         window.onscroll = function () {};
         rootElement.style.scrollBehavior = "smooth";
-        localStorage.setItem("opened", "true");
+        // localStorage.setItem("opened", "true");
+        playAudio();
       }
 
-      if (!localStorage.getItem("opened")) {
-        disableScroll();
+      function playAudio() {
+        song.volume = 0.5;
+        audioIconWrapper.style.display = "flex";
+        song.play();
+        isPlaying = true;
       }
+
+      audioIconWrapper.onclick = function () {
+        if (isPlaying) {
+          song.pause();
+          audioIcon.classList.remove("bi-disc");
+          audioIcon.classList.add("bi-pause-circle");
+        } else {
+          song.play();
+          audioIcon.classList.add("bi-disc");
+          audioIcon.classList.remove("bi-pause-circle");
+        }
+
+        isPlaying = !isPlaying;
+      };
+      // if (!localStorage.getItem("opened")) {
+      // }
+      disableScroll();
     </script>
     <!-- Scroll -->
 
@@ -486,5 +552,18 @@
       });
     </script>
     <!-- FORM LIST TAMU -->
+
+    <!-- NAMA TAMU -->
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const nama = urlParams.get("n") || "";
+      const pronounce = urlParams.get("p") || "Bapak/Ibu/Saudara/i";
+      const namaContainer = document.querySelector(".hero h4 span");
+
+      namaContainer.innerText = `${pronounce} ${nama},`.replace(/ ,$/, ",");
+
+      document.querySelector("#nama").value = nama;
+    </script>
+    <!-- NAMA TAMU END -->
   </body>
 </html>
